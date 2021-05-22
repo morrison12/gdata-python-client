@@ -28,7 +28,7 @@ class BasicAuth(object):
   """Sets the Authorization header as defined in RFC1945"""
 
   def __init__(self, user_id, password):
-    self.basic_cookie = base64.encodestring(
+    self.basic_cookie = base64.encodebytes(
         '%s:%s' % (user_id, password)).strip()
 
   def modify_request(self, http_request):
